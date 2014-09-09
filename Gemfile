@@ -27,6 +27,7 @@ gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '>= 3.1.2', :platform => :ruby
 
 gem 'rails_12factor'
+gem 'pg'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring', group: :development
