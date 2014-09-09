@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @twit.email %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @twit.username %>
+</p>
+
+<%= form_for [@twit, @tweet] do |f| %>
+  <%= f.text_field :body %>
+  <%= f.submit %>
+<% end %>
+
+<p>
+  <strong>Tweets:</strong>
+  <% @twit.tweets.each do |t| %>
+    <%= t.body %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_twit_path(@twit) %> |
+<%= link_to 'Back', twits_path %>
