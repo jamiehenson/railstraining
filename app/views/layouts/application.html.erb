@@ -11,23 +11,10 @@
     <![endif]-->
   </head>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "Twitz", '#', id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to 'Home', '/static_pages/home' %></li>
-              <li><%= link_to 'About', '/static_pages/about' %></li>
-              <li><%= link_to 'Twitz', '/twits' %></li>
-              <li><%= link_to 'Tweetz', '/tweets' %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>
