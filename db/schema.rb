@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909192743) do
+ActiveRecord::Schema.define(version: 20140909193723) do
 
   create_table "static_pages", force: true do |t|
     t.datetime "created_at"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140909192743) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password"
+    t.string   "password_digest"
   end
 
 end

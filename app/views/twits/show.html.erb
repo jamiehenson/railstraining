@@ -1,26 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @twit.email %>
-</p>
-
-<p>
-  <strong>Username:</strong>
+<h1>
+  <%= gravatar_for @twit %>
   <%= @twit.username %>
-</p>
+</h1>
 
-<%= form_for [@twit, @tweet] do |f| %>
-  <%= f.text_field :body %>
-  <%= f.submit %>
+<h2>Email:
+<%= @twit.email %>
+</h2>
+
+<%= form_for [@twit, @tweet], :html => {:class => "form-horizontal center"} do |f| %>
+  <div class="form-group">
+    <%= f.text_field :body %>
+    <div class="col-md-8">
+    <%= f.submit %>
+    </div>
+  </div>
 <% end %>
 
-<p>
-  <strong>Tweets:</strong>
-  <% @twit.tweets.each do |t| %>
-    <%= t.body %>
-  <% end %>
-</p>
+<p>Tweets:</p>
+<table class="table table-striped table-bordered table-condensed">
+  <tbody>
+    <% @twit.tweets.each do |tweet| %>
+      <tr>
+        <td><i><h3>"<%= tweet.body %>"</h3></i></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <%= link_to 'Edit', edit_twit_path(@twit) %> |
 <%= link_to 'Back', twits_path %>
